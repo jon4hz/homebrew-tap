@@ -5,12 +5,12 @@
 class Gmotd < Formula
   desc "a configurable, dynamic motd generator"
   homepage "https://jon4hz.io"
-  version "0.2.0"
+  version "0.2.1"
   depends_on :linux
 
   if Hardware::CPU.intel?
-    url "https://github.com/jon4hz/gmotd/releases/download/v0.2.0/gmotd-v0.2.0-linux-amd64.tar.gz"
-    sha256 "27543949fe14ac28491cdf5a496df87f69db57403aff3bb33ad56b60c732b903"
+    url "https://github.com/jon4hz/gmotd/releases/download/v0.2.1/gmotd-v0.2.1-linux-amd64.tar.gz"
+    sha256 "363f75fc6b071006e5a9fd2fa59178f6e2b035a9434a967e6b212c3f0f0309fc"
 
     def install
       bin.install "gmotd"
