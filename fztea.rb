@@ -5,12 +5,12 @@
 class Fztea < Formula
   desc "TUI to interact with your flipper zero"
   homepage "https://jon4hz.io"
-  version "0.6.2"
+  version "0.6.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.2/fztea-v0.6.2-darwin-arm64.tar.gz"
-      sha256 "939f625d248333c99b72733f65416342cab797768a04b8b7f75d3ebe15dbe6cb"
+      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-darwin-arm64.tar.gz"
+      sha256 "bf29e93fe66ba8c05181fdb2a0d043ccc700bf9d580c4e3115d26997a3bc6d30"
 
       def install
         bin.install "fztea"
@@ -21,8 +21,8 @@ class Fztea < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.2/fztea-v0.6.2-darwin-amd64.tar.gz"
-      sha256 "230926e862d987120dadff8f9a11a38a83911457ecb13979993b672c78ee7b49"
+      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-darwin-amd64.tar.gz"
+      sha256 "54ed6ac6ea532533ab4d7f107cf127d4832851111985bba0bb9f48041dacf40b"
 
       def install
         bin.install "fztea"
@@ -36,8 +36,8 @@ class Fztea < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.2/fztea-v0.6.2-linux-arm64.tar.gz"
-      sha256 "06a4331bc9152628e3b79cddbf0e52fc6360990ed779dad5c6ea4757e01a4054"
+      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-linux-arm64.tar.gz"
+      sha256 "1787c40dd952d6089156d8d282b2300efd5a15c274472ecb280eeea76b0c22c4"
 
       def install
         bin.install "fztea"
@@ -48,8 +48,8 @@ class Fztea < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.2/fztea-v0.6.2-linux-amd64.tar.gz"
-      sha256 "f04c0598fbc6ff4abedc1ceb11723eb2d319be5806c517a52c77358615498a7f"
+      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-linux-amd64.tar.gz"
+      sha256 "d2655700bf75ac563c40ddf3e2f37f1df3a772ab7bac93bee34b40077c8a3b0b"
 
       def install
         bin.install "fztea"
