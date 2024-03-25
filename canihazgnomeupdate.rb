@@ -5,12 +5,12 @@
 class Canihazgnomeupdate < Formula
   desc "check if all your extensions support a specific gnome version "
   homepage "https://jon4hz.io"
-  version "0.1.0"
+  version "0.1.1"
   depends_on :linux
 
   if Hardware::CPU.intel?
-    url "https://github.com/jon4hz/canihazgnomeupdate/releases/download/v0.1.0/canihazgnomeupdate-v0.1.0-linux-amd64.tar.gz"
-    sha256 "ceeda97ccadbba4ab745cd5705bdce43a7a4336a60970829888d2f28f4d9b1ae"
+    url "https://github.com/jon4hz/canihazgnomeupdate/releases/download/v0.1.1/canihazgnomeupdate-v0.1.1-linux-amd64.tar.gz"
+    sha256 "2b5796bb46a137558807c016c51d1f6654a3e76018b76b9e8850597f882f1652"
 
     def install
       bin.install "canihazgnomeupdate"
