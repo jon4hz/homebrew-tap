@@ -5,12 +5,12 @@
 class Fztea < Formula
   desc "TUI to interact with your flipper zero"
   homepage "https://jon4hz.io"
-  version "0.6.3"
+  version "0.6.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-darwin-arm64.tar.gz"
-      sha256 "bf29e93fe66ba8c05181fdb2a0d043ccc700bf9d580c4e3115d26997a3bc6d30"
+    on_intel do
+      url "https://github.com/jon4hz/fztea/releases/download/v0.6.4/fztea-v0.6.4-darwin-amd64.tar.gz"
+      sha256 "28478b977e28735750cc95be2343184dc7eb8aee588b022e81bbd2fae96b5506"
 
       def install
         bin.install "fztea"
@@ -20,9 +20,9 @@ class Fztea < Formula
         man1.install "manpages/fztea.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-darwin-amd64.tar.gz"
-      sha256 "54ed6ac6ea532533ab4d7f107cf127d4832851111985bba0bb9f48041dacf40b"
+    on_arm do
+      url "https://github.com/jon4hz/fztea/releases/download/v0.6.4/fztea-v0.6.4-darwin-arm64.tar.gz"
+      sha256 "ca9cc31d455d985e74f2c6583231ea4d07b3f36a4c70075d3e773073ba3c6219"
 
       def install
         bin.install "fztea"
@@ -35,28 +35,32 @@ class Fztea < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-linux-arm64.tar.gz"
-      sha256 "1787c40dd952d6089156d8d282b2300efd5a15c274472ecb280eeea76b0c22c4"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jon4hz/fztea/releases/download/v0.6.4/fztea-v0.6.4-linux-amd64.tar.gz"
+        sha256 "4126647b50969f28eb06092ef02b214675c0081d6f069312a94c03e5ea7620fc"
 
-      def install
-        bin.install "fztea"
-        bash_completion.install "completions/fztea.bash" => "fztea"
-        zsh_completion.install "completions/fztea.zsh" => "_fztea"
-        fish_completion.install "completions/fztea.fish"
-        man1.install "manpages/fztea.1.gz"
+        def install
+          bin.install "fztea"
+          bash_completion.install "completions/fztea.bash" => "fztea"
+          zsh_completion.install "completions/fztea.zsh" => "_fztea"
+          fish_completion.install "completions/fztea.fish"
+          man1.install "manpages/fztea.1.gz"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jon4hz/fztea/releases/download/v0.6.3/fztea-v0.6.3-linux-amd64.tar.gz"
-      sha256 "d2655700bf75ac563c40ddf3e2f37f1df3a772ab7bac93bee34b40077c8a3b0b"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/jon4hz/fztea/releases/download/v0.6.4/fztea-v0.6.4-linux-arm64.tar.gz"
+        sha256 "ebf274075f4aede432a97f2ce33f080d44e653a576e98c64e43092b00335dc9e"
 
-      def install
-        bin.install "fztea"
-        bash_completion.install "completions/fztea.bash" => "fztea"
-        zsh_completion.install "completions/fztea.zsh" => "_fztea"
-        fish_completion.install "completions/fztea.fish"
-        man1.install "manpages/fztea.1.gz"
+        def install
+          bin.install "fztea"
+          bash_completion.install "completions/fztea.bash" => "fztea"
+          zsh_completion.install "completions/fztea.zsh" => "_fztea"
+          fish_completion.install "completions/fztea.fish"
+          man1.install "manpages/fztea.1.gz"
+        end
       end
     end
   end
